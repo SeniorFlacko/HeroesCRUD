@@ -40,4 +40,8 @@ export class HeroesService {
             });
   }
 
+  getHeroe( key:string ){
+    let url = `${ this.heroeUrl }/${ key }.json`;
+    return this.http.get( url ).map( response => response.json() );
+  }
 }
