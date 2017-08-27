@@ -44,4 +44,14 @@ export class HeroesService {
     let url = `${ this.heroeUrl }/${ key }.json`;
     return this.http.get( url ).map( response => response.json() );
   }
+  
+  getHeroes(){
+    let url = `${ this.heroesUrl }`;
+    return this.http.get( url ).map( response => response.json() );
+  }
+
+  deleteHeroe( key:string ){
+    let url = `${ this.heroeUrl }/${ key }.json`;
+    return this.http.delete( url ).map( response => response.json() );
+  }
 }
